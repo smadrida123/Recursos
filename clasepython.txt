@@ -6,5 +6,8 @@ import this: zen de Python
 Conjuntos (Sets)
 -Datos tienen algo en comun
 -No tienen orden
--No se pueden modificar
 -No se permiten elementos duplicados
+
+Ejemplo:
+set_countries={"col","mex","bol"} forma explicita
+set_string=set("hola") crea set a partir de caracteres 
