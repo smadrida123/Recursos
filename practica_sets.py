@@ -31,3 +31,27 @@ set_countries.remove("col")
 print(set_countries)
 #limpiar conjunto, queda set en vacio
 set_countries.clear()
+
+#CLASE 3
+#Union de dos conjuntos
+set_1={"col","mex","bol"}
+set_2={"pe","bol"}
+set_3=set_1.union(set_2)
+print(set_3)
+#otra manera
+print(set_1 | set_2)
+
+#Interseccion entre dos conjuntos
+set_3=set_1.intersection(set_2)
+print(set_3)
+print(set_1 & set_2)
+
+#diferencia (resta entre conjuntos)
+set_3=set_1.difference(set_2)
+print(set_3)
+print(set_1-set_2)
+
+#diferencia simetrica excluye elementos comunes entre conjuntos
+set_3=set_1.symmetric_difference(set_2)
+print(set_3)
+print(set_1^set_2)
