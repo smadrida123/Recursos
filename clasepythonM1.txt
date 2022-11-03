@@ -7,7 +7,18 @@ Conjuntos (Sets)
 -Datos tienen algo en comun
 -No tienen orden
 -No se permiten elementos duplicados
+-Mutable
 
 Ejemplo:
 set_countries={"col","mex","bol"} forma explicita
 set_string=set("hola") crea set a partir de caracteres 
+
+#LISTAS []
+-MUTABLES
+-ORDENADAS
+-INDEXING/SLICING
+-PUEDEN HABER ELEMENTOS duplicados
+
+#TUPLA [(,)]
+-NO SE PUEDE MUTAR
+-RESTO DE CARACTERISTICAS DE LISTA

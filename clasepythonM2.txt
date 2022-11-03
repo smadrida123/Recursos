@@ -1,0 +1,19 @@
+#funciones
+Encerrar bloque de codigo "guardar"
+def my_print(text):
+  print(text)
+
+my_print("parametro")
+
+funciones reciben parametros y retornan un valor
+El return se almacena y se puede asignar a una variable
+
+#SCOPE DE VARIABLES
+price=100 #global dentro de archivo
+
+def increment():
+  price=200 #local dentro de def
+  result=price+10
+  return result #local dentro de bloque de codigo
+x=increment()
+print(x)
