@@ -3,7 +3,7 @@ Python: Comprehensions, funciones y manejo de errores
 replit.com: entorno virtual de codigo
 import this: zen de Python
 
-Conjuntos (Sets)
+Conjuntos {Sets}
 -Datos tienen algo en comun
 -No tienen orden
 -No se permiten elementos duplicados

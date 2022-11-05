@@ -17,3 +17,5 @@ def increment():
   return result #local dentro de bloque de codigo
 x=increment()
 print(x)
+
+#CONTADOR x +=1 == x=x+1
