@@ -48,3 +48,5 @@ se debe convertir en lista para arrojar resultado
 
 #REDUCE 
 Reduce o saca conclusion de una lista
+reduce(func,lista a reducir)
+Solo saca un valor
