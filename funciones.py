@@ -26,5 +26,7 @@ sum_with_range(20,30)
 #ejemplo para varios returns. Resultados en tupla se pueden sacar por posicion o tener varias variables para sacarlas individual
 def find_volume(lenght=1,width=1,height=1):
   return lenght*width*height, width,"hola"
-result,width,string=find_volume(width=10)
-print(result,width,string)
+result,width,height=find_volume(width=10)
+print(result,width,height)
+
+

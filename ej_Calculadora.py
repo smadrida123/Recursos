@@ -4,7 +4,7 @@ def conv_input():
     options=("/","+","-","x")
     try:
        n1=float(input("Ingrese primer numero "))
-       n2=float(input("Ingrese primer numero "))
+       n2=float(input("Ingrese segundo numero "))
     except:
         print("No se ingreso número")
         exit()
@@ -15,32 +15,25 @@ def conv_input():
     return n1,n2,op
 
 def sum(n1,n2,op):
-    suma=0
     if op=="+":
-        suma=n1+n2
-        print("La suma de valores es ",suma)
-    return suma
+        print("La suma de valores es ",n1+n2)
+    return n1+n2
 
 def resta(n1,n2,op):
-    resta=0
     if op=="-":
-        resta=n1-n2
-        print("La resta de valores es ",resta)
-    return resta
+        print("La resta de valores es ",n1-n2)
+    return n1-n2
 
 def multi(n1,n2,op):
-    multi=0
     if op=="x":
         multi=n1*n2
-        print("Multiplicacion entre valores es ",multi)
-    return multi
+        print("Multiplicacion entre valores es ",n1*n2)
+    return n1*n2
 
 def div(n1,n2,op):
-    div=0
     if op=="/":
-       div=n1/n2
-       print("resultado division es",div)
-    return div
+       print("resultado division es",n1/n2)
+    return n1/n2
 
 
 def calc():

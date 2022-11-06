@@ -10,6 +10,7 @@ El return se almacena y se puede asignar a una variable
 
 #SCOPE DE VARIABLES
 price=100 #global dentro de archivo
+scope local=dentro de funcion
 
 def increment():
   price=200 #local dentro de def
@@ -19,3 +20,31 @@ x=increment()
 print(x)
 
 #CONTADOR x +=1 == x=x+1
+opcion al azar entre un rango establecido = random.choice(options)   (primero hay que hacer import random)
+
+#FUNCIONES LAMBDA
+sintaxis: lambda parametro: return
+se pueden asignar a una variable
+Se deben definir en una sola linea, parametro y retornar valor.
+Para funciones de mayor complejidad se deben definir
+
+#HIGH ORDER FUNCTION 
+Funcion para ejecutar dentro de funcion (como "parametro")
+high_order(x,funcion)  solo definicion de funcion, no necesita ejecutarse. se ejecuta en definicion
+se pueden definir funciones lambda dentro de mismos parametros de entrada
+
+#3FUNCIONES BASICAS PARA MANIPULACION DE LISTAS (MAP,FILTER,REDUCE)
+
+#MAP
+Funcion que hace transformaciones a listas
+Salen mismo numero de elementos
+Pueden recibir de parametro otras funciones
+se debe convertir en lista para arrojar resultado
+
+#FILTER
+Filtrar elementos de una lista para que pertenezcan a una nueva lista
+sintaxis filter(lambda parametro:condicion,lista a filtrar)
+se debe convertir en lista para arrojar resultado
+
+#REDUCE 
+Reduce o saca conclusion de una lista
