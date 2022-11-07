@@ -1,0 +1,41 @@
+#MODULOS
+#Son ficheros que contienen un conjunto de funciones
+#Crear propios modulos
+#Modulo es cualquier archivo .py
+#import
+import random
+
+import sys
+print(sys.path)
+#devuelve lista con ruta donde se esta ejecutando archivo
+
+import re
+#expresiones regulares
+text="mi numero es 289 34 8 858"
+result=re.findall("[0-9]+",text)
+print(result)
+
+import time
+timestamp=time.time()
+print(timestamp) #hora formato computadora
+local=time.localtime()
+result=time.asctime(local)
+print(result)
+
+import collections 
+#para manejar listas
+numbers=[1,1,2,2,3,5,1,1,1,5,56,6,4,2,3,]
+counter=collections.Counter(numbers)
+print(counter)
+#devuelve diccionario con frecuencia de aparicion de numero key(numero):value(numero de veces que aparece)
+
+#se puede importar archivo y ejecutarlo con import
+#para ejecutar algo especifico del archivo from archivo import funcion, variable clse a ejecutar
+#from carpeta.archivo import funcion, variable o clase a ejecutar a ejecutar
+#import archivo.funcion variable o clase
+
+#Tambien se pueden correr archivos desde otros archivos como scripts
+#Para esto, se hace el metodo 
+if __name__=="__main__":
+    run()
+#Para archivo con variables y funciones definidas, si es ejecutado desde terminal, se ejecuta solo si se realiza el anterior metodo en archivo madre y se ejecuta de manera controlada si se ejecuta desde un archivo tercero
