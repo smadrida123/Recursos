@@ -1,0 +1,34 @@
+##tipos de errores
+#sintaxis
+#div 0
+#variable no declarada anteriormente
+
+suma=lambda x,y:x+y
+#comando assert hace una verificacion y arroja assertion error no arroja resultado deseado
+assert suma(2,2)==4
+print("buena")
+
+#para lanzar propios errores se usa comando raise + Exception()
+x=10
+if x>5:
+  raise Exception("error")
+
+#Manejo de errores para evitar que se detenga operacion de programa
+#Puede tener varios except
+try:
+  print(0/0)
+  assert 1!=1, "Uno no es igual a uno"
+  x=10
+  if x>5:
+   raise Exception("error es mayor a 5")   
+except ZeroDivisionError as error:
+  print("division entre 0")
+#Comando assert tambien puede generar mensaje, con el except se muestra error de manera mas amigable 
+except AssertionError as error:
+  print(error)
+#Captura de excepcion propia
+except Exception as error:
+  print(error)
+#Comando assert tambien puede generar mensaje, con el except se muestra error de manera mas amigable 
+print("hola")
+#Solo coje primer error que coja

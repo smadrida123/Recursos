@@ -32,7 +32,7 @@ items=[
   }
 ]
 prices=list(map(lambda item:item["price"],items))
-print(prices)
+print(items,prices)
 
 #ejemplo 4 maps con funcion dentro de parametro (map es high order function)
 items=[

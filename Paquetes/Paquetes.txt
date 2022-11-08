@@ -1,0 +1,8 @@
+##PAQUETES 
+Carpeta con modulos
+#Version explicita
+Sintaxis from carpeta.nombre_archivo import funciones o variables a importar
+#Version implicita
+Desde archivo __init__.py se puede realizar importacion para no llamarla en archivo donde se iba a importar
+Para versiones anteriores de python3.3 se debe crear archivo __init__.py para importar correctamente el paquete
+import paquete.modulo as alias_modulo importa modulo con palabra clave

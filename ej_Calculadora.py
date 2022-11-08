@@ -7,7 +7,12 @@ def conv_input():
        n2=float(input("Ingrese segundo numero "))
     except:
         print("No se ingreso número")
-        exit()
+        try:
+         n1=float(input("Ingrese primer numero correctamente "))
+         n2=float(input("Ingrese segundo numero correctamente "))
+        except:
+         print("No se ingreso número correctamente. Verificar datos")
+         exit()
     op=input("Ingrese operacion ")
     if op not in options:
         print("opcion no valida")

@@ -1,0 +1,28 @@
+#Manejo de archivos
+#se debe dar ruta en open; No si esta en misma carpeta
+#file=open(input())
+#file=open("./text.txt")
+#Metodo read lee linea por linea
+#print(file.read())
+#readline genera iterador manual como next()
+#print(file.readline())
+#tampoco ocupa mucha memoria lee linea a linea (diferente a text)
+#for line in file:
+  #print(line)
+
+#libera espacio en memoria cerrar el archivo. Buena practica
+#file.close()
+#SINTAXIS para que archivo se cierre automaticamente (no hacer close)
+with open("./text.txt") as file:
+  for line in file:
+   print(line)
+  
+#Como escribir en archivo de texto
+#de forma implicita abre en modo lectura "r"
+#Permiso de escritura "w" lectura y escritura r+
+#permiso w+ lectura, escritura y modificacion. Sobreescribe texto
+with open("./text.txt","w+") as file:
+  for line in file:
+   print(line)
+  file.write("nuevas cosas\n")
+  file.write("nuevas cosas2\n")
