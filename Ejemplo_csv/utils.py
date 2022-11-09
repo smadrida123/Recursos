@@ -16,3 +16,16 @@ def get_population(country_dict):
 def population_by_countries(data,country):
   result=list(filter(lambda item:item["Country/Territory"]==country,data))
   return result
+
+#sacar lista de paises, sacar lista de valores World Population Percentage
+def population_percentage(data):
+  countries=[]
+  pop_perc=[]
+  for x in data:
+    countries.append(x["Country/Territory"])
+    pop_perc.append(x["World Population Percentage"])
+  datos=list(zip(countries,pop_perc))
+  resul={countries:pop_perc for (countries,pop_perc) in datos}
+  labels2=resul.keys()
+  values2=resul.values()
+  return labels2,values2

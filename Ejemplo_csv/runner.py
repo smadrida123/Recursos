@@ -4,6 +4,11 @@ import graph
 
 def run():
   data=reader.read_csv("/home/smadrida/Compartido/Compartido/Ejemplo_csv/world_population.csv")
+  #para grafico de pie, linea para filtrar por continente
+  data=list(filter(lambda item:item["Continent"]=="South America",data))
+  labels2,values2=utils.population_percentage(data)
+  graph.generate_pie_chart(labels2,values2)
+  
   country=input("Type country => ")
   result=utils.population_by_countries(data,country)
   if len(result)>0:
