@@ -19,13 +19,6 @@ def population_by_countries(data,country):
 
 #sacar lista de paises, sacar lista de valores World Population Percentage
 def population_percentage(data):
-  countries=[]
-  pop_perc=[]
-  for x in data:
-    countries.append(x["Country/Territory"])
-    pop_perc.append(x["World Population Percentage"])
-  datos=list(zip(countries,pop_perc))
-  resul={countries:pop_perc for (countries,pop_perc) in datos}
-  labels2=resul.keys()
-  values2=resul.values()
-  return labels2,values2
+  countries=list(map(lambda x:x["Country/Territory"],data))
+  pop_perc=list(map(lambda x:x["World Population Percentage"],data))
+  return countries,pop_perc
