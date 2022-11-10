@@ -10,7 +10,7 @@ def run():
   graph.generate_pie_chart(labels2,values2)
   
   country=input("Type country => ")
-  result=utils.population_by_countries(data,country)
+  result=utils.population_by_countries(data,country) 
   if len(result)>0:
     #result saca lista de dict de pais seleccionado
     #country saca elemento en formato diccionario
