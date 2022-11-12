@@ -1,0 +1,3 @@
+#PIP: Gestor de paquetes de python
+#pypi.org todas las librerias
+#pip freeze: Librerias instaladas en el computador

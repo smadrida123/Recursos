@@ -1,3 +1,4 @@
+#PARA USAR EL ARCHIVO DESCARGAR DE https://www.kaggle.com/datasets/iamsouravbanerjee/world-population-dataset
 import utils
 import csv_reader as reader
 import graph
