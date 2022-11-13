@@ -1,13 +1,14 @@
 import matplotlib.pyplot as plt
 
-def generate_bar_chart(labels,values):
+def generate_bar_chart(name,labels,values):
   fig,ax=plt.subplots()
   ax.bar(labels,values,color="navy")
   plt.title("Tendencia de poblacion a traves de los años para pais seleccionado")
   plt.xlabel("Años")
   plt.ylabel("Cantidad de poblacion")
 
-  plt.show()
+  plt.savefig(f"{name}.png")
+  plt.close()
 
 def generate_pie_chart(labels,values):
   fig,ax=plt.subplots()

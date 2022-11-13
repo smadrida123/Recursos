@@ -1,0 +1,15 @@
+#PIP: Gestor de paquetes de python
+#pypi.org todas las librerias
+#pip freeze: Librerias instaladas en el computador
+
+#ENTORNOS VIRTUALES
+Instalar a nivel global se pueden generar errores
+Ambientes virtuales encapsulan modulos y lo dejan para sus propios proyectos (carpetas)
+
+which python3: muestra de donde se esta ejecutando python
+
+-m venv "nombre ambiente" crea ambiente virtual en carpeta
+activar ambiente source env/bin/activate (debe aparecer (env) luego de comando)
+deactivate: apagar ambiente
+##Requirements.txt: gestiona todas las dependencias y en que versiones 
+comando pip3 freeze > requirements.txt (output de pip3 freeze se va a archivo nuevo requirements.txt)
