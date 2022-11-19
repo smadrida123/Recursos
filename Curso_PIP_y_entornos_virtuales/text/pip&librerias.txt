@@ -1,0 +1,47 @@
+#PIP: Gestor de paquetes de python
+#pypi.org todas las librerias
+#pip freeze: Librerias instaladas en el computador
+
+#ENTORNOS VIRTUALES
+Instalar a nivel global se pueden generar errores
+Ambientes virtuales encapsulan modulos y lo dejan para sus propios proyectos (carpetas)
+
+which python3: muestra de donde se esta ejecutando python
+
+-m venv "nombre ambiente" crea ambiente virtual en carpeta
+activar ambiente source env/bin/activate (debe aparecer (env) luego de comando)
+deactivate: apagar ambiente
+##Requirements.txt: gestiona todas las dependencias y en que versiones 
+comando pip3 freeze > requirements.txt (output de pip3 freeze se va a archivo nuevo requirements.txt)
+READme.md instrucciones para cada proyecto
+
+#status code 200: respuesta todo esta bien
+#request: libreria para solicitar a url/api
+#pandas: libreria para manipular archivos duros (como csv)
+ #reemplaza csv_reader de volver datos en lista de diccionarios
+  df=pd.read_csv("world_population.csv")
+  df=df[df["Continent"]=="Africa"]
+
+  countries=df["Country/Territory"].values
+  percentages=df["World Population Percentage"].values
+  print(df,countries,percentages)
+  graph.generate_pie_chart(countries,percentages)
+
+#creacion de web server: libreria FastAPI y uvicorn
+#con uvicorn se lanza a host local con uvicorn main:app(de fastapi) --reload (detectar cambios de codigo)
+#para construir paginas web dinamicas (archivos html)
+@app.get("/contact",response_class=HTMLResponse)
+def get_list():
+    return """
+     <h1>Hola soy una pagina</h1>
+     <p>soy un parrafo</p>"""
+
+#DOCKER: Aisla version de python "contenedores"
+FROM python:version de python a elegir
+docker compose build. se deben tener archivo Dockerfile.txt y docker-compose.yml
+docker compose up -d inicializa docker
+docker compose ps verificar que se haya inicializado
+docker compose nombre_docker bash
+exit
+
+

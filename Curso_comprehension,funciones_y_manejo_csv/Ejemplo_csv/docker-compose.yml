@@ -1,0 +1,7 @@
+services:
+  read_csv:
+   build:
+    context: .
+    dockerfile: Dockerfile 
+   volumes:
+   - .:/Ejemplo_csv
