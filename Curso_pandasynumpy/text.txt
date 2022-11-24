@@ -1,0 +1,5 @@
+#dimensiones
+n=1 vector
+n=2 matriz
+n=3 ej linea de tiempo
+n=4 tensor ej imagenes
