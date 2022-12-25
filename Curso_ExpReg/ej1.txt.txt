@@ -1,0 +1,23 @@
+#CTRL +F Filtrar y se pueden usar expresiones regulares
+             
+#abstraer caracter (.): encuentra todos los caracteres
+.... busca 4 caracteres juntos
+. + espacio encuentra todos los caracteres con espacio subsecuente
+
+/d: encontrar todos los digitos = [0-9]
+/w: encontrar todos los caracteres = [a-zA-Z0-9]
+/s: encontrar todos los espacios 
+
+CONSTRUIR CLASE: Ej:[a-fA-F5-9-\.] Puede buscar guion y caracter punto
+# QUE COMIENCE CON "#"
+{6} Numero de veces que se cumple caracteres
+
+*:busca todos los caracteres "greedy" 0 o mas
++: uno o mas caracteres "non greedy"
+?: 0 o algun caracter
+
+CONTADORES {min,max}
+\-\ "escapar" caracteres reservados
+[\-\. ]? : Pueden o no existir 3 tipos de separadores distintos
+
+el delimitador ? antecedido por el + busca la minima ocurrencia posible

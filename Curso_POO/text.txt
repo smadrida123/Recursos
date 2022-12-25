@@ -1,0 +1,54 @@
+POO: Modelacion de problemas para plasmar en codigo
+Herencia, clase, atributo, metodo, encapsulamiento
+#DIAGRAMAS DE MODELADO
+OMT Y UML
+OMT: Object modeling techniques: metodologia para analisis orientado a objetos
+plasmar analisis en un grafico
+Atributos, clases
+UML: Unified modeling language: Lenguaje de modelaje unificado: toma tecnicas de omt y genera version unificada y mejorada
+Clases, Casos de uso, objetos, actividades, iteración, estados, implementación
+Diagrama UML para proyectos
+
+Clases: parte superior atributos parte inferior operaciones
+Composicion, Agregacion, Herencia, Asociacion
+
+Problema:
+ 1) Identificar objetos
+ 2) Diagrama UML de objeto
+ 3) Definir objeto en codigo
+
+Objetos: tienen propiedades y comportamientos. Sustantivas. Ejemplo: Objeto usuario
+Comportamientos: operaciones que puede hacer objetos. Verbos; Verbos y sustantivos
+Atributos, propiedades: Sustantivos. Nombre, tamaño, color, forma
+Clase: Modelo sobre el cual se construira objeto. Permiten generar mas objetos. molde.
+Analizar objetos para crear clases: Abstraccion de datos desde objeto para generar molde
+
+Modularidad: 
+Diseño modular: subdividir sistema en partes pequeñas o modulos. Que funcionan independientes pero conforman un proyecto.
+
+Objeto/Clase:
+At1= Id
+
+Cuando se detectan caracteristicas y comportamientos iguales, entonces significa que se debe hacer una abstraccion
+Clase: plantilla que permite crear objetos
+Crear clase general que permita generar nuevas clases a partir de otra
+Superclase, Subclase (padre, hijo)
+
+#METODO CONSTRUCTOR
+Dan estado inicial a objeto
+Tiene el mismo nombre de la clase
+Son los parametros minimos que necesita el objeto para que pueda vivir
+
+JAVA
+Crear objeto Clase nombre clase= new Clase();
+Asignar atributos nombre clase.
+super atributos clase padre
+this atributos clase hija o actual
+/ / comentar en JAVA
+
+Encapsulamiento
+Hacer que paramtero sea inalterable "invisible" asignar modificador de acceso
+public,protected,default (no se puede acceder desde herencia),private solo a nivel de clases
+getters y setters para acceder a atributos ocultos
+
+Polimorfismo: metodos con mismo nombre pero con comportamiento distinto
