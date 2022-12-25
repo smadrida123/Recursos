@@ -8,3 +8,5 @@ print(df)
 
 #df.isnull() retorna mismo array con valores booleanos con true cada vez que encuentre valor nulo*1 vuelve todo 1,ture o 0,false
 #df.fillna("Missing") llena todos nulos con missing (df.mean(llena con promedio))
+#df.interpolate() sigue tendencia de serie y llena datos nulos
+#df.dropna() borra datos nulos y cambia dimension array

@@ -1,1 +1,0 @@
-suma=lambda x1,x2,op:x1+x2 if op=="+" else 
