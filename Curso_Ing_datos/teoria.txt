@@ -1,1 +1,21 @@
 Ciencia de datos: disciplina que extrae conocimiento de datos disponibles
+anaconda: ambiente para ciencia de datos
+jupyter notebooks:
+jupyter-notebook y copiar url
+modo ejecucion
+control enter ejecutar linea shift enter ejecutar y crear nueva linea
+modo navegacion:
+esc y se pone azul
+k arriba j abajo insertar celda b
+
+Tipos de datos
+Metodos segun tipo de datos
+
+Fuentes de datos
+API Library
+datos.gob.mx .co .pe
+Dataset search
+data.world
+Kaggle
+google ai hub
+ourworldindata.org
