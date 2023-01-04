@@ -1,0 +1,8 @@
+#archivo utilizado para organizar la informacion de configuracion para su posterior transformacion 
+#en diccionario en common.py
+
+news_sites:
+  eluniversal:
+    url: https://www.eluniversal.com.co/
+  elpais:
+    url: https://elpais.com/america-colombia/

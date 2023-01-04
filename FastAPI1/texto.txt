@@ -1,2 +1,37 @@
+API: Application Program Interfaces
+
 FastAPI: Framework para crear backend y Application program interfaces (APIs)
 go vs node.js vs FastAPI (python)
+
+se crea ambiente virtual y se instala fastapi y uvicorn
+uvicorn nombre_archivo:variable que contiene objeto --reload -se lanza api en local host
+
+Documentacion interactiva de APIs
+OpenAPI: Conjunto de reglas que define como describir, crear API
+Swagger: conjunto de programas que permiten funcionar con API : obtiene especificacion 
+se activa con url/docs
+ SwaggerUI: Muestra de forma grafica (html) API documentada
+
+ReDoc: alternativa a Swagger
+se activa con url/redoc
+
+PATH OPERATIONS: Compuesta de path decorator y path function
+Paths= a la derecha de dominio /.../
+myproject.com/PATH/ROUTES/ENDPOINTS
+
+Operations= diferentes metodos http
+mas populares
+GET, POST, DELETE, PUT, OPTIONS, HEAD, PATCH, TRACE
+
+Path parameters (obligatorio)
+definicion variable dentro de un endpoint/path
+path/{"nombre variable"}
+
+Query parameters (opcional)
+&=unir parametros opcionales
+path_opcional?query_name=valor&query_name2=valor2
+
+Request/Response Body {JSON}
+headers & Body
+cliente a servidor= Request
+servidor a cliente= Response

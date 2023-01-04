@@ -19,3 +19,21 @@ data.world
 Kaggle
 google ai hub
 ourworldindata.org
+
+ETL
+Extract: proceso de lectura de diversas Fuentes
+Transform: limpieza de datos
+Load: proceso de insercion de datos
+
+Web scraper:
+crear datasets
+Solicitudes a la Web: libreria request
+status code=200 salio bien
+
+BeautifulSoup: libreria para manipular tipos de datos html y otros. Regresa listas 
+acceder con soup.select a estructura de pagina Web
+
+Page Object Pattern
+consiste en esconder queries especificos que se utilizan normalmente en html
+Se hace por dinamismo en web y diferencia de codigo fuente entre paginas
+modificacion de selectores etc
