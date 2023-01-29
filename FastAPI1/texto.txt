@@ -35,3 +35,49 @@ Request/Response Body {JSON}
 headers & Body
 cliente a servidor= Request
 servidor a cliente= Response
+
+MODELOS
+Creacion de modelos - Pydantic: Base Model 
+limites validaciones de parametros ej nombre <50 caracteres>0
+
+query parameters
+para strings
+max_length, min_length, regex
+para int
+ge=greater or equal than
+le=lower or equal than
+gt= greater than
+lt= lower than
+
+descripcion y titulo a cada parametro
+title,description
+
+validaciones de query parameters, request body y path parameters y modelos
+
+Tipo de datos especiales
+enum = conjunto de strings especificos
+httpURL
+File Path: ruta de archivo
+Directory Path: ruta de directorio
+EmailStr= "abd"@"abc"."fdf"
+PaymentCardNumber
+IP Adress
+Negative/Positive int float
+
+Automatizar request body para pruebas en API
+parametro example dentro de cada atributo 
+o 
+subclase config con nombre example para todo el objeto y sus atributos
+
+Automatizar path y query parameters
+
+response model: atributo de path operation
+
+STATUS CODES
+100 : Information
+200 : OK
+201 : CREATED
+204 : No content
+300 : Redireccion
+400 : Error de cliente
+404 : Endpoint que no existe

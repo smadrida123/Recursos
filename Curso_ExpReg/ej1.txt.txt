@@ -12,7 +12,7 @@ CONSTRUIR CLASE: Ej:[a-fA-F5-9-\.] Puede buscar guion y caracter punto
 # QUE COMIENCE CON "#"
 {6} Numero de veces que se cumple caracteres
 
-*:busca todos los caracteres "greedy" 0 o mas
+*:busca todos los caracteres "greedy" 0 o mas12345678
 +: uno o mas caracteres "non greedy"
 ?: 0 o algun caracter
 
@@ -21,3 +21,26 @@ CONTADORES {min,max}
 [\-\. ]? : Pueden o no existir 3 tipos de separadores distintos
 
 el delimitador ? antecedido por el + busca la minima ocurrencia posible
+
+NEGAR CLASE Not 
+\D = Todo lo que no sea digito
+[^...] NEGACION Todo excepto
+
+como poder limpiar archivos grandes
+^ sin [] denota inicio de linea
+$ final de linea ^............$  comienzo final
+
+agrupar matches (). Si se agrupan clases y se reemplazan con $1,$2....
+se borran todos los matches que esten fuera de las agrupaciones
+{title:"$1",year:$2} se pueden reemplazar grupos para formar formatos ej JSON
+
+[\?&](\w+)=([^&\n]+) como romper query
+
+BANDERAS 
+ej case insensitive \i
+aa
+a
+12,34,56,78
+hola
+Esto es una prueba
+12345678_

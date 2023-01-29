@@ -1,0 +1,46 @@
+/* formas para dar estilo a elemento html desde css
+1) seleccionando elemento */
+p {
+    color:blueviolet;
+    font-size: 50px;
+}
+/* 2) creando clase */
+/* class */
+.parrafo{
+    color:red;
+    font-size: 50px;
+}
+/* 3) ID */
+#parrafo2{
+    color:yellowgreen;
+    font-size: 50px;
+}
+
+.main-nav {
+    margin-top: 10px;
+    list-style: none;
+    padding-left: 0px;
+    background-color: #14C6D8 ;
+
+}
+.main-nav__item {
+    display: inline-block;
+    background-color: rgb(255, 153, 127);
+}
+.main-nav__item a {
+    color:rgb(226, 227, 230);
+    padding:5px;
+    text-decoration: none;
+}
+
+/* pseudo clases */
+.main-nav__item a:hover {
+    color: blue;
+}
+.main-nav__item a:active {
+    color:#2FD814;
+}
+/* pseudo elementos  */
+.main-nav__item a::after {
+    content: " | ";
+}

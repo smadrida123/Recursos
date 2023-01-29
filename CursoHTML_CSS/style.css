@@ -1,0 +1,21 @@
+li:hover {
+    color:#B36F06;
+
+}
+
+img {
+    border-radius: 8px;
+    width:150px;
+    height: 150px;
+    padding: 10px;
+    
+}
+h1 {
+    color:#BCDE25;
+    background-color: #25DEA0;
+    font-style: italic;
+    rotate: 45;
+}
+main {
+    background-color: #2825de;
+}

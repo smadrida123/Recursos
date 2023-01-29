@@ -1,21 +1,35 @@
 1
 12
 123
-1234
+1234555658
 123456
 #1234567a8910
 12345678910a-
-13453243
+134532431112232
 url: https://www.instagram.com/p/BXB4zsUlW5Z/?taken-by=beco.mx
 url: http://instagram.com/p/blablablah
 url: http://itam.mx/test
 http://instagram.com/p/blablablah
 csv1,csv2,csv3,csv4,csv5
+123,1234,123456,343455,44554
+123,1234,123456,343455,44554,455884
 #Rodrigo Jiménez Gutiérrez
-5556581111
-56-58-11-12
+
+
+555658
+56-58-11
+56.58.11
+56 58 11
+56y58y11
+56.78-98
+56-58-11#123
++521565811
+552560p123
+552560e123
+
 302-345-9876
 esto.es.un.mail+gmail@mail.com
+smadrida@unal.edu.co
 #Adfh
 dominio.com
 [LOG ENTRY] [ERROR] The #system is unstable
@@ -25,3 +39,76 @@ dominio.com
 [LOG ENTRY] [LOG] [user:@beco] Clicked here
 [LOG ENTRY] [LOG] [user:@beco] Rated the app
 [LOG ENTRY] [LOG] [user:@beco] Logged out
+
+(\d{2,4}[\-\. ]?){4,4}
+Expresion regular para encontrar 2 o 4 digitos separados por - . o espacio o no separados que se repitan 4 veces para hallar formato de "telefono"
+url: https://www.instagram.com/p/BXB4zsUlW5Z/?taken-by=beco.mx
+url: http://instagram.com/p/blablablah
+url: http://itam.mx/test
+http://instagram.com/p/blablablah
+https://www.vanguarsoft.com.ve
+http://platzi.com
+https://traetelo.net
+https://traetelo.net/images archivo.jsp
+url: https://subdominio.traetelo.net
+url: https://www.instagram.com/p/BXB4zsUlW5Z/?taken-by=beco.mx
+url: http://instagram.com/p/blablablah
+url: http://itam.mx/test
+http://instagram.com/p/blablablah
+https://www.google.com.co/
+https://sub.dominio.de.alguien.com/archivo.html
+https://en.wikipedia.org/wiki/.org
+https://cdn-microsoft.org/image/seixo2t9sjl_22.jpg
+https://hola.pizza EFRGT
+https://platzi.com/clases/1301-expresiones-regulares/11860-urls9102/ clase
+
+
+
+esto.es_un.mail@mail.com
+esto.es_un.mail+complejo@mail.com
+@dominio.com
+rodrigo.jimenez@yahoo.com.mx
+ruben@starbucks.com
+esto_no$es_email@dominio.com
+no_se_de_internet3@hotmail.com
+
+-99.205646,19.429707,2275.10
+-99.205581, 19.429652,2275.10
+-99.204654,19.428952,2275.58
+99.204654,19.428952,2275.58
+100.204654,19.428952,2275.58
+
+-99 12' 34.08"W, 19 34' 56.98"N
+-34 54' 32.00"E, -3 21' 67.00"S
+-100 54' 32.00"E, -3 21' 67.00"S
+
+Juan Pablo Rodriguez
+Santiago Madrid 
+Camilo Sarmiento Galvez
+Alejandro Pliego Abasto
+Milagros Reyes Japon
+Samuel Paris Arrabal
+Juan Pablo Tafalla
+Axel Galvez Velazquez
+Oscar Montreal Aparicio
+Jacobo Pozo Tassis
+Guillermo Ordez Espiga
+Eduardo Pousa Curbelo
+Ivanna Bienvenida Kevin
+Ada Tasis Lopez
+Luciana Saenz Garcia
+Florencia Sainz Marquz
+Catarina Cazalla Lombarda
+Paloma Gallo Perro
+Margarita Quesada Florez
+Vicente Fox Quesada
+Iris Graciani
+Asuncin Carballar
+Constanza Munoz
+Manuel Andres Garcia Marquez
+
+^\d+::([\w\s:,\(\)\.'\-&]+)\s\((\d{4})\)::.*$
+
+https://b3co.com/     - s=fotografia     - mode=search     - module=blog
+https://www.google.com/search     - q=regex+platzi     - oq=regex+platzi     - aqs=chrome..69i57j69i60.6885j0j9     - sourceid=chrome     - ie=UTF-8
+https://co.search.yahoo.com/search     - p=flickr     - fr=yfp-t     - fp=1     - toggle=1     - cop=mss     - ie=UTF-8

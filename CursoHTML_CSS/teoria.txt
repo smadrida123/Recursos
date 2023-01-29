@@ -1,0 +1,68 @@
+## curso 1 html y css
+#paginas estaticas: productos web con informacion (texto, imagenes) para consumir que no va a cambiar/paginas informativas
+no estan conectadas a base de datos (landing pages)
+
+#paginas dinamicas productos web con informacion (texto, imagenes) para consumir que van a cambiar/web apps
+conectadas a bases de datos
+
+#HTML Hypertext markup language: lenguaje de marcado de texto
+container: 
+  header
+     logo, navigation
+  Main content
+  sidebar
+  footer
+#index pagina inicial que busca servidor para abrir proyecto
+#head: para navegador cargar proyecto pero no es visual para usuario
+ etiquetas meta. link hoja de estilos titulo descripcion
+#body: visual para usuario
+ etiquetas contenedoras llevan mas etiquetas adentro
+ estructura semantica de html5
+ etiqueta de contenido llevan texto, imagenes, etc
+ titulos <h1-h6> diferencia de tamaños
+ <div><p> <a> ayuda a generar hipervinculos
+
+ Lossy y lossless (con perdida / sin perdida)
+ Lossless: grandes: sin perdida muy pesado. no se pierde nada del archivo original
+     gif, png (png 8) (imagen con fondo transparente, iconos, logo) (png 24: uso de colores ilimitado)
+     , svg (formato vector, iconos, logo
+ Lossy: poco tamaño menos calidad menos pesado
+     jpg,jpeg (fotografia)
+
+Optimizacion de imagenes:
+Tamaño recomendado imagenes 70kb
+Pagina: Tiny png: comprime tamaño de imagen (.png,.jpg,webp)
+Pagina: Verefix: elimina metadatos de imagen
+pexels.com imagenes
+
+video controls y iframe
+
+form & input formularios
+tipos de input
+
+ctrl k + c comentar
+
+autocompletar y require
+
+SELECT: Seleccionar de lista
+submit solo para formularios
+button para el resto
+
+CSS
+Cascade style sheet
+Se accede a archivo html por etiqueta id o class
+Pseudo clases y pseudo elementos
+BEM: Bloque Elemento Modificador
+<!-- BLOQUE -->
+<main class="Padre">
+	<!-- BLOQUE__ELEMENTO --> 
+	<section class="Padre__Hijo">
+		<!-- BLOQUE__ELEMENTO--MODIFICADOR -->
+		<article class="Padre__Hijo--Mayor"></article>
+	</section>
+	<section class="Padre__Hijo"></section>
+	<section class="Padre__Hijo"></section>
+	<section class="Padre__Hijo"></section>
+ </main>
+
+ MODELO DE CAJA
