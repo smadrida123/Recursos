@@ -26,15 +26,19 @@ GET, POST, DELETE, PUT, OPTIONS, HEAD, PATCH, TRACE
 Path parameters (obligatorio)
 definicion variable dentro de un endpoint/path
 path/{"nombre variable"}
+parametro dentro de url
 
 Query parameters (opcional)
-&=unir parametros opcionales
+&=unir parametros opcionales dentro de url
 path_opcional?query_name=valor&query_name2=valor2
+ej:
+http://127.0.0.1:8000/person/detail?name=santiago&age=12
 
 Request/Response Body {JSON}
 headers & Body
 cliente a servidor= Request
 servidor a cliente= Response
+formato JSON de cliente a API
 
 MODELOS
 Creacion de modelos - Pydantic: Base Model 
@@ -71,7 +75,8 @@ subclase config con nombre example para todo el objeto y sus atributos
 
 Automatizar path y query parameters
 
-response model: atributo de path operation
+response model: atributo de path operation. Respuesta que se le da a usuario en path operation
+Path operation debe ir con path operation function
 
 STATUS CODES
 100 : Information
@@ -81,3 +86,33 @@ STATUS CODES
 300 : Redireccion
 400 : Error de cliente
 404 : Endpoint que no existe
+422 : Validation Error
+500 : Internal server error
+
+formularios: campos que se recibe de frontend, ya no de json,html
+
+cookie= pieza de codigo que servidor mete en computadora en web para trackear info
+header parameters= ej json ej html. cabeceras http puede ser de cliente a servidor y de servidor a cliente
+
+archivos dentro de fastapi con
+files: archivos dentro de fastapi ej imagen, videos
+Upload file: de cliente a api
+  viene con paramteros:
+    - filename
+    - content-type
+    - file: archivo en si mismo
+
+
+HTTP EXCEPTION: Clase para operaciones prohibidas/no soportadas
+accesos a datos que no existen o no se tienen permiso
+
+tags: orden de path operations parametro
+"""docstring"""
+
+Deprecar path operation
+Dejar sin efecto path operation
+
+RECORDERIS
+deactivate: desactivar entorno virtual
+python3 -m venv [nombre ambiente virtual]: crear ambiente virtual
+pip install fastapi uvicorn: instalar frameworks necesarios
