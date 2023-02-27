@@ -116,3 +116,7 @@ RECORDERIS
 deactivate: desactivar entorno virtual
 python3 -m venv [nombre ambiente virtual]: crear ambiente virtual
 pip install fastapi uvicorn: instalar frameworks necesarios
+
+EJEMPLO API Twitter
+
+MODELOS TWEETS & USERR

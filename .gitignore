@@ -239,6 +239,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,python
-__pycache__
+__pycache__/
 .vscode/
 *.ipynb
