@@ -3,6 +3,7 @@ from uuid import UUID
 from datetime import date
 from datetime import datetime
 from typing import Optional
+import json
 
 #Pydantic
 from pydantic import BaseModel
@@ -21,7 +22,7 @@ class UserLogin(UserBase):
         min_length=8,
         max_length=30
     )
-class User(BaseModel):
+class User(UserBase):
     first_name:str=Field(
         ...,
         min_length=2,
@@ -45,6 +46,29 @@ class Tweet(BaseModel):
     updated_at:Optional[datetime]=Field(default=None) 
     by:User=Field(...)    
 
-@app.get(path="/")
-def home():
-    return {"Twitter API": "Working!"}
+class UserRegister(User, UserLogin):
+    
+    pass
+
+class UserExists(BaseModel): 
+    email: EmailStr = Field(...)
+    message: str = Field(default="User exists!")
+
+
+#HELPFUL FUNCTIONS
+##Read file
+def read_data(file1):
+    with open("{file1}.json","r+", encoding="utf-8") as f:
+        return json.load(f)
+    
+def serialize(d):
+    for key in d:
+        val = d[key]
+        # For nested objects
+        if type(val) is dict:
+            serialize(val)
+            continue
+        if type(val) in [UUID, datetime, date]:
+            d[key] = str(val)
+    return d
+

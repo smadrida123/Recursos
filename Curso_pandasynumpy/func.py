@@ -19,6 +19,7 @@ print(b)
 c=np.array([[1,2],[3,4]])
 d=np.array([5,6])
 #concatenar Se deben concatenar arrays de iguales dimensiones
+#expand_dims:transponer
 d=np.expand_dims(d,axis=0)
 e=np.concatenate((c,d),axis=0)
-print(e)
+print(d,"\n",e)

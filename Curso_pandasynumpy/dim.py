@@ -23,11 +23,12 @@ print(vector,vector.ndim)
 mod=np.expand_dims(np.array([1,2,3]),axis=0)
 print(mod)
 
-#practica
-practica=np.array([[[[[1,2,3,3,4,7,8,6],[[7,56,2,6,2,5,6,8]],[[7,26,4,6,78,6,28,25]]]]]],ndmin=10)
+#practica creacion de array de 5 dimensiones
+practica=np.array([[[[[1,2,3,3,4,7,8,6],[7,56,2,6,2,5,6,8],[7,26,4,6,78,6,28,25]]]]],dtype=object)
 p2=np.squeeze(practica)
 print(practica,practica.ndim,p2,p2.ndim)
 
-ex=np.array(["2","3","6"],dtype="float64")
+#argmax devuelve indice donde esta numero maximo en array
+ex=np.array([2,3,6])
 x=np.argmax(ex)
-print(ex.info())
+print(x)

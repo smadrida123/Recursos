@@ -1,0 +1,112 @@
+##FUNDAMENTOS DE BASES DE DATOS
+
+Bases de datos: Coleccion organizada y estructurada de informacion o datos, almacenada en sistemas de computo
+-Relacionales: MySQL, Mariadb, Oracle, PostgreSQL, Microsoft....
+-No relacionales: Mongodb, neo4js.........
+Servicios:
+-Auto administrados: persona instala, mantiene y actualiza bases de datos
+-Administrados: servicios ofrecidos por empresas de mantenimiento, actualizaciones y demas (amazon, google)
+SQL: Lenguaje bases de datos relacionales
+Sentencias:
+SELECT: Es como print
+
+Bases de datos relacionales (RBD)
+basadas en archivos: en archivos de texto plano
+
+##ENTIDAD (plural): "Objeto" representa "algo" tiene propiedades (atributos) y comportamientos
+atributos: doble linea : mas de uno ; punteado: se puede inferir a partir de otro; compuestos; atributos unicos subrayados
+se deben evitar entidades exactamente iguales (se pueden diferenciar con atributos unicos)
+-Entidades fuertes: no dependen de entidad para existir
+-Entidad debil: no puede existir sin entidad fuerte (doble linea), se diferencian con claves de entidad fuerte
+
+#EJEMPLO Blog
+Entidades:
+-Posts
+ -Titulo
+ -fecha_publicacion
+ -contenido
+ -estatus
+ -etiquetas
+ -id
+-Usuarios
+ -login
+ -contraseña
+ -nickname
+ -email
+ -id
+-Comentarios
+ -comentario
+ -fecha_publicacion
+ -id_comentario
+-Categorias
+ -nombre_categoria
+ -id_categoria
+
+#EJEMPLO Presupuestos
+Entidades:
+-Proyectos
+ -m2 construidos
+ -# de aptos
+ -ubicacion
+ -codigo id
+-Unidades Constructivas (depende de proyecto)
+ -m2 construidos
+ -# pisos
+ -# aptos/pisos
+ -tipo de pilotes
+ -$$CD/m2
+-Director de Proyectos
+ -nombre
+
+ relaciones
+ proyecto tiene varias unidades constructivas
+ proyecto tiene 1 director de proyectos pero director de proyectos tiene varios proyectos
+
+
+
+##RELACIONES: Manera de ligar entidades. Se representan con rombo. Se definen a traves de verbos
+Cardinalidad: Cuantos pertenecen de una entidad sobre otra
+-1 a 1: persona a datos personales
+-0 a 1: puede haber opcion de haber 1 o no
+-1 a varios: persona tiene automovil. Tambien 0 a varios o 1 opcional a varios
+-varios a varios. alumno a clase
+
+##DIAGRAMAS
+Diagrama entidad- relacion
+Diagrama Fisico
+
+#Tipos de datos:
+-texto:
+  -char (caracteres) -varchar(mas eficiente si no se conoce tamaño de cadena) limites de 255 caracteres -text: mas de 255 caracteres
+-numeros:
+  -integer -bigint -smallint -decimal(n,s) -numeric(n,s) numero, decimales
+fecha/hora:
+  -date -time -datetime -timestamp
+logicos:
+ -boolean: True, false 1,0
+
+#Constraints (Restricciones o reglas)
+not null: datos obligatorios
+unique: solo existe uno en tabla, como email usuario
+primary key: combinacion anteriores
+foreign key: manera de ligar tabla con otra tabla, primary key que viene de otra tabla
+check: asegura que valor cumpla condicion dada
+default: valor por defecto
+index: se crea por columna para busquedas mas rapidas
+
+#Normalizacion: Estandarizar
+atributos atomicos (sin campos repetidos)
+cumple 1era norma y campo de tabla debe de depender de clave unica. Separacion de tablas
+cumple dos primeras reglas, campos que no son claves no deben de tener dependencias. Crear tablas separadas para valores que apliquen en multiples tablas
+cumple 3 primeras reglas, campos multivaluados se identifican con clave unica. eliminar campos que no dependan de llave en tabla
+(aplicar a datos que cambien frecuentemente)
+
+Relacion muchos a muchos. Se debe romper relacion 
+Tabla pivote 
+
+##Manejador de bases de datos
+
+
+
+
+

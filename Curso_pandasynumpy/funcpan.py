@@ -13,5 +13,6 @@ dataframe=pd.read_csv("bestsellers-with-categories.csv",sep=",")
 #dataframe.sort_index(axis=1,ascending=False)
 d2=dataframe.copy()
 d3=d2[d2["Year"].isin([2014,2015])]
-print(d3)
+
+print(d3,"\n",d2.sort_values("Year",ascending=False))
 #apply: deja aplicar funcion de usuario

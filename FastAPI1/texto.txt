@@ -119,4 +119,10 @@ pip install fastapi uvicorn: instalar frameworks necesarios
 
 EJEMPLO API Twitter
 
-MODELOS TWEETS & USERR
+MODELOS TWEETS & USER
+
+Importamos desde pydantic clase Base model
+Para modelo USER
+ UUID (Universal unique Identifier)
+
+DOCSTRING= DOCUMENTACION 

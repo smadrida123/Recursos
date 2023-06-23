@@ -7,8 +7,8 @@ print(ej)
 d={1:"A",7:"B",10:"C",30:"D"}
 da=pd.Series(d)
 print(da)
-#Acceder por posicion igual que lista segun index
-pos=ej[7]
+# Accede a dato de indice correspondiente
+pos=ej[10]
 print(pos)
 #definir dataframe con index dado (default empieza desde cero)
 data={"Ej":["A","B","C","D"],"Ej2":[1,2,3,4],"Ej3":[33,44,5,6]}

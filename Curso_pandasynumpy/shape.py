@@ -3,9 +3,9 @@
 #reshape pasa de una estructura a otra segun parametro especificado (#filas,#columnas,"tipo de lenguaje")
 import numpy as np
 
-a=np.random.randint(1,10,(3,2))
+a=np.random.randint(1,10,(2,4))
 print(a.shape)
-a2=a.reshape(1,6)
+a2=a.reshape(1,8)
 print(a,a2)
 
 #prueba

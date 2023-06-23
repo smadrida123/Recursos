@@ -10,6 +10,8 @@ matriz=ar.reshape(2,5)
 matriz2=matriz.copy()
 #producto punto
 d=np.matmul(matriz,matriz2.T)  #matriz @ matriz2.T
-print(d)
+print(matriz,d)
 
 #unique,ocurrence =np.unique(arr,return_counts=True) #devuelve valores unicos y su ocurrencia
+unique=np.unique(matriz,return_counts=True)
+print(unique)
