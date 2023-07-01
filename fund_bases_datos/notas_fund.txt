@@ -105,8 +105,265 @@ Relacion muchos a muchos. Se debe romper relacion
 Tabla pivote 
 
 ##Manejador de bases de datos
+mysql_workbench= cliente grafico: manera grafica
+servicios administrados: AWS (amazon), GCP (google), Azure
+
+Bigquery
+#SQL: STRUCTURED QUERY LANGUAGE
+DDL: Data definition language: crear y manejar estructura de base de datos
+Create: base de datos, tablas, vistas (principales) #indices
+Alter: Alterar o modificar
+Drop: Borrar (cuidado)
+
+CREATE DATABASE "NOMBRE";
+USE DATABASE "NOMBRE";
+CREATE TABLE
+en pestaña QUERY 1 se ejecuta codigo
+Vistas: toman datos de base de datos de manera presentable
+CREATE VIEW nombre AS
+ SELECT 
+
+ALTER TABLE nombre tabla
+ADD
+DROP
+CHANGE
+
+#DML: Data Manipulation Language
+
+INSERT
+-INSERT INTO nombre_tabla (col1,coln)
+ VALUES (val1,valn);
+
+
+UPDATE
+-UPDATE base de datos
+SET(indica que campo) columna= "nuevo valor"
+WHERE person_id =1 cambie el registro donde el person_id=1. Se debe dar condicion WHERE
+DELETE
+-DELETE FROM
+ WHERE
+
+SELECT 
+-SELECT nombres columnas a seleccionar
+ FROM
+ WHERE (Condicion)
+
+##PARA crear databases: 
+buena practica: empezar con entidades que no tienen llave foranea
+orden de creacion de tablas dependientes, se deben crear cuando existan tabla independiente de la que depende
+se deben crear foreign keys en pestaña correspondiente
+On update: que hacer si dato se actualiza NO ACTION, CASCADE (Actualiza en otra tabla), SET_NULL (deja nulo campo), RESTRICT (No deja) 
+tablas transitivas entre entidades que tienen relacion muchos a muchos
+
+en workbench:
+Database -> reverse engineering: para database que se eligio crea diagrama fisico
+Querys: consultas a bases de datos. Toma de decisiones
+Sentencia SELECT + FROM + WHERE (Opcional)
+Ej: Estructura de un Query
+SELECT city, count(*) AS total  : Mostrar cuenta de ciudad como total. Que datos se van a mostrar
+SELECT *: significa seleccionar todo
+SELECT nombrecampo AS nombreamostrar Da alias a campos de tabla sin cambiar tabla
+COUNT(*): El select mostrará el conteo total
+FROM people : De donde voy a coger los datos
+WHERE active= true : Filtrado de los que tienen condicion de activo
+GROUP BY city : Agrupar datos por ciudad
+ORDER BY total DESC : Ordenar de mayor a menor 
+HAVING total >= 2; Filtrado de mas de dos personas por ciudad
+
+FROM: de donde lo queremos mostrar
+FROM tabla_izq
+LEFT JOIN: todos elementos de tabla izquierda nombre tabla derecha ON campo relacionado.id = tabla a unir.campo relacionado (llave foranea)
+WHERE condicion
+
+RIGHT JOIN: todos elementos de tabla derecha
+INNER JOIN: Interseccion
+OUTER JOIN: Se logra con left + right join
+SELECT *
+FROM usuarios
+  LEFT JOIN post ON usuarios.id =post.usuario_id
+UNION
+SELECT *
+FROM usuarios
+  RIGHT JOIN post ON usuarios.id =post.usuario_id;
+
+WHERE: Filtrado por condicion
+AND: Concatena condiciones
+LIKE: "%palabra_clave a buscar%" %empiez por donde sea y termina por donde sea%
+BETWEEN lim_inf AND lim_may
+SE PUEDEN NEGAR CON NOT LIKE Y NOT BETWEEN
+WHERE YEAR("fecha") BETWEEN año AND año
+WHERE IS IS/NOT
+SELECT * FROM libros WHERE categorias IN ("Informática","Inglés","Diseño"); OR anidado
+
+GROUP BY: Agrupar la tabla
+Funciones: AVG, COUNT, SUM, MAX, MIN
+
+ORDER BY: ordenar datos por criterio
+LIMIT: Limita a x resultados encontrados
+ascendente (default): menor a mayor ASC
+descendente: mayor a menor DESC
+Puede ordenar cadenas por orden alfabetico
+
+HAVING: ayuda a seleccionar despues de agrupar, al contrario de sentencia WHERE, son similares pero HAVING sirve para datos dinamicos/agrupados
+
+Respetar orden:
+SELECT: lo que quiero mostrar
+FROM: de donde voy a tomar los datos
+WHERE: Filtros de datos
+GROUP BY: Agrupacion info
+HAVING: filtros a datos agrupados
+ORDER BY: ordenacion de datos
+
+Nested queries: query dentro de query: se usan para problemas condiciones de tablas. query que sirve de entrada a otro query
+se trata de usar en querys que no sean escalables (que se crezcan exponencialmente o añadan queries a su anidacion)
+Las consultas anidadas son la mejor opción cuando los valores dependen de otras tablas, y estas no se encuentran relacionadas entre si.
+
+EJ1
+SELECT new_table_projection.date,
+COUNT(*) AS posts_count
+FROM (
+	SELECT DATE(MIN(fecha_publicacion)) AS DATE, YEAR(fecha_publicacion) AS post_year
+    FROM post
+    GROUP BY post_year
+) AS new_table_projection
+GROUP BY new_table_projection.date
+ORDER BY new_table_projection.date;
+
+EJ2
+SELECT *
+FROM post
+WHERE fecha_publicacion=(
+ SELECT MAX(fecha_publicacion)
+ FROM POST
+);
+
+Función CASE permite agregar un campo virtual con información generada a partir de condiciones múltiples.
+SELECT  idioma, precio, 
+CASE
+	WHEN precio > 1000 THEN "Muy caro"
+	WHEN precio > 500 THEN "Precio módico"
+	ELSE "Muy barato"
+END AS "informe"
+FROM libros;
+
+Como convertir pregunta en un query:
+ej: doble join
+SELECT post.titulo, COUNT(*) AS num_etiquetas
+FROM post
+ INNER JOIN post_etiquetas ON post.id=post_etiquetas.post_id
+ INNER JOIN etiquetas ON etiquetas.id=post_etiquetas.etiqueta_id
+GROUP BY post.id
+ORDER BY num_etiquetas DESC
+LIMIT 2;
+
+GROUP CONCAT: Concatena cadenas separadas por comas
+GROUPBY(DISTINCT solo deja valores unicos)
+
+CREATE TABLE IF NOT EXISTS comentarios (
+  id INTEGER PRIMARY KEY NOT NULL,
+  cuerpo_comentario TEXT NOT NULL,
+  usuario_id INTEGER NOT NULL,
+  post_id INTEGER NOT NULL,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+  FOREIGN KEY (post_id) REFERENCES posts(id)
+);
+
+-- 2
+INSERT INTO comentarios (id,cuerpo_comentario,usuario_id,post_id) 
+VALUES 
+(1, "un día seremos leyenda",2,54),
+(2, "Las máquinas podrán hacer lo que sea que haga la gente, porque las personas son solo máquinas.",1,43),
+(3, "Me gustan las papitas fritas",1,43);
+
+-- 3
+SELECT * FROM comentarios;
+
+-- 4
+SELECT comentarios.cuerpo_comentario AS comentario, 
+usuarios.login AS usuario, posts.titulo AS post
+FROM comentarios
+LEFT JOIN posts ON 
+posts.id = comentarios.post_id
+LEFT JOIN usuarios ON 
+usuarios.id = comentarios.usuario_id
+WHERE comentarios.usuario_id = 1;
 
 
 
+BASES DE DATOS NO RELACIONALES
+Diferentes tipos de bases de datos
+Clave-valor: almacena y extrae datos con clave unica. Diccionarios. DynamoDB, Cassandra
+Basadas en documentos (Ej. JSON): implementacion de clave valor con estructura mas definida tipo JSON. MongoDB, Firestore.
+ No es bueno para queries complejos
+Basadas en grafos: interconectadas por multiples relaciones. Relaciones complejas. Neo4j, Titan
+En memoria: Veloz pero volatil. Memcached, Redis
+Optimizadas para querys complejos: diversas estructuras, datos historicos (business intelligence, Machine learning). BigQuery, Elasticsearch
 
 
+SERVICIOS ADMINISTRADAS Y JERARQUIA DE DATOS:
+Firestore: servicio administrado basado en documentos
+Base de datos
+---> Coleccion ----> Documentos (similar a formato JSON)
+En firestore:
+Top level collections: coleccion "padre"/primer nivel: Entidad o tabla. Documento por dato
+coleccion no puede existir sin al menos 1 documento
+string
+number:int o float
+boolean
+map: documento dentro de documento
+array: conjunto de datos sin estructura
+null
+timestamp
+geopoint
+reference: tipo de foreign key
+
+Un top level collection se utilizaria para relaciones de tipo “agregacion”. Muchas consultas: Si coleccion es independiente
+Mientras que una sub collection se utilizaria para relaciones tipo “composicion”. Intrinseco a top´level collection: Si necesita de otra
+coleccion para vivir
+
+No estan pensadas para hacer querys complejos, se usa para mantener datos estructurados de aplicacion. historicos de masificacion de datos. mucho almacenamiento
+
+
+Bases de datos en la vida real:
+mucho almacenamiento y querys complejos. BigQuery
+basada en documento: mantener datos. Guardar y extraer datos. No querys complejos
+
+-Big data: movimiento de bases de datos que grandes cantidades de datos, empezó a superar a bases de datos relacionales
+almacenar grandes volumenes de datos por segundo
+business inteligence: analitica de datos 
+cassandra: necesidad de extraer e ingresar grandes volumenes de info por segundo. Desventajas en manipulacion
+querys
+
+-Data warehouse: almacenamiento de grandes (generalmente mas que big data) cantidades  datos de manera *historica*
+bases de datos en base a documentos. Data warehouse sirve para todo lo que no esta viviendo en app
+BigTable: No sirve tanto para hacer consultas 
+El DW no es un repositorio para consulta histórica, o backups, sino que su propósito es habilitar la toma de decisiones basadas en datos y 
+para esto contiene datos de diferentes sistemas, organizados de tal forma que permite 
+la consulta rápida de grandes volúmenes de datos (históricos o no históricos) con propósitos analíticos, estos propósitos difícilmente 
+pueden lograrse con diseños normalizados.
+BigQuery
+
+-Data Mining:  es el conjunto de técnicas y tecnologías que permiten explorar grandes bases de datos, 
+de manera automática o semiautomática, con el objetivo de encontrar patrones repetitivos, 
+tendencias o reglas que expliquen el comportamiento de los datos en un determinado contexto.
+Extraccion de datos, tratarlos de multiples fuentes y hacer sentido de ellos
+organizar caos de datos (datos no normalizados etc)
+ETL: Extract - Transform - Load
+ETL: Herramienta 
+Como convertir informacion no coherente, no orden, no cohesion en datos valiosos
+conexion entre datos vivos, transformarlos y guardarlos en data warehouse
+Data pipelines: flujo de info donde se pasan datos por procesos necesarios para guardarlos en destinos deseados (ej. data warehouse)
+
+Business intelligence: output/proposito de tratamiento y procesos con  datos
+datos de manera oportuna y organizada para toma de decisiones en empresas
+presentacion de informacion. entender que info se necesita
+ 
+Machine learning: serie de tecnicas que involucran inteligencia artificial y encontrar patrones
+tratamiento de datos para encontrar cosas interesantes
+ayuda a hacer modelos que ayudan a encontrar patrones o correlaciones que no son obvios
+BigQuery
+Datastudio ayuda a hacer dashboards con datos
+Clasificacion: Procesamiento de lenguaje natural
+Prediccion de datos: para toma de decisiones. Comportamiento estimado de datos
+
+Data science: conjunto de tecnicas ya vistas
