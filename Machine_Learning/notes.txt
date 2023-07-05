@@ -1,0 +1,29 @@
+##INTRODUCTION TO MACHINE LEARNING
+machine learning: algoritmos para encontrar patrones en datos para resolver problemas o tomar decisiones
+Features: descriptores de datos. Aprendidos por modelos
+Modelos solo son tan buenos como sus datos
+
+Terminologia:
+Datos: Unidades de informacion o hechos de observaciones
+Features: tipos de informacion, caracteristicas de los datos/observaciones
+Filas: Observaciones individuales o muestras
+Columnas: Features que describen las observaciones
+Outlier: Puntos de datos que se comportan de forma extraña
+Pre-processing: Preparar datos para uso de modelos de machine learning
+ETL Pipeline: framework de data science para extraer, transformar y cargar datos
+Target: Variable de salida
+Tipos de datos: num,categorica (labels de features que pueden representar categorias de tipo texto para mejor procesamiento de datos), 
+imagen, texto, nan: missing/corrupted value
+tambien en categorica: 1-hot-encodings (1,0,0,0) si defini que pueden haber 4 labels y quiero marcar la label 1
+
+para leer datos: pandas read_csv() head() dtypes: muestra que tipo de datos en features
+para visualizar datos: matplotlib. histogramas: frequencia de features, dispersion: para relaciones entre features
+
+Tipos de modelo de machine learning
+Supervised:modelo obtiene features de entrada y salida. Hay target a predecir
+-Regresion: target es numerico. Regresion lineal
+-Clasificacion: Target es etiqueta. Regresion logistica y bosque aleatorio
+
+Not supervised: Objetivo desconocido, queremos encontrar estructura y grupos dentro de datos
+Clustering: grupos dentro de datos. k-means, clustering jerarquico
+Dimensionality reduction: Encontrar features de entrada en datos. versiones comprimidas de datos. Principal component analysis PCA, T-SNE

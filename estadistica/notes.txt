@@ -1,0 +1,17 @@
+##Estadistica descriptiva
+
+Flujo de trabajo en data science
+Ingesta de datos
+Visualizacion de datos
+Preparacion datos
+Entrenamiento de modelo
+Evaluacion Modelo
+Validacion modelo
+Model serving
+End user interface
+
+#Estadistica para ingesta y procesamiento
+Tipos de datos: Categoricos y numericos
+Medidas de tendencia central: variables que resuelven informacion. media mediana y moda
+
+#Estadistico para analitico y exploracion

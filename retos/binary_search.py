@@ -46,13 +46,16 @@ x=list(np.random.randint(0,100,100))
 binary_search(x)
 """
 #solucion chatgpt
-def binary_searchgpt(arr, target):
+
+def binary_searchgpt(ls:list, target):
+    ls.sort()
+    print(ls)
     low = 0
-    high = len(arr) - 1
+    high = len(ls) - 1
 
     while low <= high:
         mid = (low + high) // 2
-        mid_val = arr[mid]
+        mid_val = ls[mid]
 
         if mid_val == target:
             return mid
@@ -64,10 +67,11 @@ def binary_searchgpt(arr, target):
     return -1  # Target value not found
 
 # Example usage
-sorted_list = (list(np.random.randint(0,100,100))).sort()
-target_value = 10
+ls = list(np.random.randint(0,100,100))
+target_value=10
 
-result = binary_searchgpt(sorted_list, target_value)
+
+result = binary_searchgpt(ls, target_value)
 
 if result != -1:
     print("Target value", target_value, "found at index", result)
