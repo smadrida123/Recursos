@@ -18,10 +18,8 @@ import matplotlib.pyplot as plt
 data=pd.read_csv("diabetes.csv")
 data.head()
 d=data.dtypes
-data
 
 data=data.dropna()
-data
 
 f=plt.figure(figsize=(8,4))
 ax=f.add_subplot(1,1,1)
@@ -72,7 +70,7 @@ ax.set_title("Blood pressure VS Age")
 ax.set_xlim([0,150])
 fig.tight_layout()
 
-data=data[data["BloodPressure"]>0]
+
 diabetic=data[data["Outcome"]==1]
 non_diabetic=data[data["Outcome"]==0]
 fig=plt.figure(figsize=(10,10))

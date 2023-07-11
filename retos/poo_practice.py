@@ -1,6 +1,6 @@
 #a) Implement a class called Circle that has a radius attribute. Include methods to calculate the area and circumference of the circle.
 class circle:
-    id=str
+
 
 #metodo constructor para inicializar clase y atributos
     def __init__(self,id):
@@ -22,12 +22,20 @@ print(f"El area de {circulo1} es: ",area)
 #Implement methods to deposit and withdraw money from the account.
 
 class BankAccount:
-    owner=str
-    initial_balance=float
 
-    def __init__(self,owner,initial_balance):
+
+    def __init__(self,owner,balance):
         self.owner=owner
-        self.balance=initial_balance
+        self.balance=balance
+
+#Sumar balances entre dos cuentas distintas 
+    def __add__(self,other):
+        if isinstance(other,BankAccount):
+            new_balance=self.balance+other.balance
+            return BankAccount(self.owner,new_balance)
+        else:
+            raise TypeError("Unsupported operand type")
+
 
     def saludar(self):
         print("Saludos dueño de cuenta: ",self.owner)
@@ -46,7 +54,10 @@ class BankAccount:
         print("Current balance: ",self.balance)
 
 
-cuenta1=BankAccount("Santiago",0)
+cuenta1=BankAccount("Santiago",1)
+cuenta2=BankAccount("Oreo",33)
+result=cuenta1+cuenta2
+print(result.balance)
 cuenta1.saludar()
 monto=float(input("ingrese monto: "))
 cuenta1.entrada_salida(monto)

@@ -8,10 +8,9 @@ corazon=np.linspace(1,12,12)
 trebol=np.linspace(1,12,12)
 diamante=np.linspace(1,12,12)
 class Deck_cards:
-    num_cards=48
-    nom_baraja=["Picas","Diamantes","Corazones","Treboles"]
-    game=str
-
+    num_cards=int
+    nom_baraja=list
+    game=list
 
     def __init__(self,num_cards,nom_baraja,game):
         self.num_cards=num_cards
@@ -20,24 +19,24 @@ class Deck_cards:
 
     def shuffle_deck(self):
        game=self.game
+       juego=input("Ingrese juego a jugar: ")
        nom_baraja=self.nom_baraja
-       game.upper()
+       juego=juego.upper()
        print(game)
        baraja={}
-       if game is "POKER" or "BLACKJACK":
+       if juego not in game: 
+          print("Juego seleccionado no valido") 
+       else:
          x,y=np.random.randint(1,12,2)
          for w in range(1,12,1):
             if x == w or y==w :
                baraja[random.choice(nom_baraja)]=w
-         return(baraja)
-            
-            
-       if game is "VIUDA":
-          return np.random.randint(1,56,5)
+         return baraja,juego
+        
        
-my_deck=Deck_cards(48,["Picas","Diamantes","Corazones","Treboles"],"Poker")
-baraja=my_deck.shuffle_deck()
-print("Su baraja es: ",baraja,"Para su juego: ",my_deck.game)
+my_deck=Deck_cards(48,["Picas","Diamantes","Corazones","Treboles"],["POKER","BLACKJACK"])
+baraja,juego=my_deck.shuffle_deck()
+print("Su baraja es: ",baraja,"Para su juego: ",juego)
           
 
         

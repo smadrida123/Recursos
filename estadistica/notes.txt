@@ -12,6 +12,58 @@ End user interface
 
 #Estadistica para ingesta y procesamiento
 Tipos de datos: Categoricos y numericos
-Medidas de tendencia central: variables que resuelven informacion. media mediana y moda
+Medidas de tendencia central: variables que resuelven informacion. media mediana y moda  
+Medidas de dispersion: Que tanto difieren valores. 
+-Rango: Distancia de Dato minimo a maximo
+-Rango interquartilico: Distancia de 25% a 75% de datos (Q1 Y Q3) Q2 es mediana
+-Desviacion estandar: sumatoria de distancia entre datos y media al cuadrado es varianza. raiz es desv est
+metodo de deteccion de outliners: min=q1-1.5IQR max=q3+1.5IQR en distribucion normal
+MEDIA -3desvest a MEDIA + 3desvest comprende 99.75% de datos en distribucion normal
+si se tienen quartiles se puede saber que tan sesgada esta la distribucion de los datos
+
+#Ejemplo pyplot y seaborn
+sns.set(rc={'figure.figsize':(11.7,8.27)})
+f, (ax_hist, ax_box) = plt.subplots(2, sharex=True, gridspec_kw={"height_ratios": (.6, .4)})
+sns.histplot(df['price_usd'], ax=ax_hist)
+sns.boxplot(df['price_usd'], ax=ax_box)
+ax_hist.set(xlabel='')
 
 #Estadistico para analitico y exploracion
+
+
+Pipeline de procesamiento de variables numericas
+Normalizar datos, datos son eficientes en el rango [-1,1]
+Escalamiento lineal: datos uniformemente distribuidos
+-min,max: xscaled = 2x- min - max /max -min
+-clipping: forzar datos que esten afuera de min y max definidos (pueden ser quartiles)
+-z_score: xscaled=x-media/desvest
+
+Escalamiento no lineal: datos no uniformemente distribuidos
+aplicar transformacion (funcion)  para que de como resultado una distribucion simetrica
+ej: Xs=tanh(x)
+
+Pipeline de procesamiento para variables categoricas
+Mapeos numericos
+-Dummy:
+variables linealmente independientes (sin correlacion)
+no se pueden agregar nuevas categorias, problemas con datos externos a los codificados inicialmente
+
+-One-hot: MAS USADA
+Descubrir categorias no incluidas inicialmente
+permite flexibilidad con nuevos valores
+
+Correlaciones y Covarianza
+#Para reducir datos, se puede concluir que si dos datos tienen correlaciones muy altas se pueden desprender de modelo para reduccion de datos ya
+que aportan la misma informacion
+ 
+Covarianza: sumatoria de la multiplicacion entre distancias de puntos a las medias (desviaciones)
+coeficiente de correlacion: cov / desvest(x)*desvest(y)   [0 no correlacion , 1 correlacion directa , correlacion inversa-1]
+"correlacion no implica causacion"
+
+Matriz de covarianza: Para mas de 1 variable, todas las covarianzas posibles y se construye matriz de covarianza
+
+ANALISIS DE COMPONENTES PRINCIPALES
+matriz de covarianza= vector*matriz de valores propios * vector transpuesto
+
+Analisis de componentes principales, permite por medio de la matriz de covarianza identificar direcciones donde se captura la mayor parte de
+varianza de datos. Pudiendo reducir datos, capturando cantidad minima de varianza

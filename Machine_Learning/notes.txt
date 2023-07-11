@@ -21,9 +21,114 @@ para visualizar datos: matplotlib. histogramas: frequencia de features, dispersi
 
 Tipos de modelo de machine learning
 Supervised:modelo obtiene features de entrada y salida. Hay target a predecir
--Regresion: target es numerico. Regresion lineal
--Clasificacion: Target es etiqueta. Regresion logistica y bosque aleatorio
+-Regresion: target es numerico. ALG: Regresion lineal
+-Clasificacion: Target es etiqueta. ALG: Regresion logistica y bosque aleatorio
 
-Not supervised: Objetivo desconocido, queremos encontrar estructura y grupos dentro de datos
-Clustering: grupos dentro de datos. k-means, clustering jerarquico
-Dimensionality reduction: Encontrar features de entrada en datos. versiones comprimidas de datos. Principal component analysis PCA, T-SNE
+Not supervised: Objetivo desconocido, queremos encontrar estructura y grupos dentro de datos. Como agrupar los datos
+Clustering: grupos dentro de datos. ALG: k-means, clustering jerarquico
+Dimensionality reduction: Encontrar features de entrada en datos. versiones comprimidas de datos. ALG: Principal component analysis PCA, T-SNE
+
+Reinforcement learning
+
+Algoritmos de Machine Learning
+1) Proceso de decision: como se hacen predicciones o se retornan respuestas usando los parametros
+2)Funcion de error/coste: como evalua si se generan buenas predicciones
+3)Regla de actualizacion: como se mejoran los parametros para predicciones (optimizacion numerica) 
+
+Normalizar datos numericos
+1. calcular promedio de datos
+2. calcular desv. est de datos
+3. Para cada punto realizar x = xi - promedio / desv. est.
+
+Training (60%-80%): datos de los que el modelo aprende nuevos patrones
+Validation: (0-20%): datos para verificar que modelo aprende
+Testing:(0-20%): datos que se apartan para revisar si el modelo fue exitoso al predecir
+
+
+##ALGORITMOS SUPERVISADOS
+Regresion lineal
+positiva. x y y crecen
+negativa. x crece y decrece
+no lineal
+funcion de coste: 1/N * sumatoria(yi-ypred)^2 Mean square error MSE
+regla de actualizacion: optimizacion numerica para hallar parametros mas adecuados (w1 pendiente y w0 intercepto) donde funcion de coste se minimiza
+R2: Correlacion entre valores de entrada y de salida [0-1] 1 mejor correlacion
+
+Regresion logistica
+Problemas de clasificacion
+Hallar linea como en regresion pero que separe clases
+
+Arboles de decision
+Nodos de decision
+Arboles aleatorios: grupos de arboles de decision donde se decide por respuesta correcta analizando respuesta de todos los arboles
+Numeros de arboles, max_features=numero de features, max_depth=profundidad
+N_split=numero de data points que debe tener nodo antes de dividirse
+N_min= Minimo de muestras para estar en hoja
+
+##ALGORITMOS NO SUPERVISADOS
+k-means: clustering: permite identificar que puntos de graficos de dispersion pertenecen a que grupo
+centroides de grupos y se calcula distancia de puntos a centroide, donde se puede actualizar centroide (regla de actualizacion)
+segun promedio de distancias hasta encontrar cambio despreciable en centroide (optimizacion numerica de funcion de coste) u hasta que variacion
+de numero de puntos dentro de cluster no varie considerablemente
+k: numero de grupos que existen en los datos
+Rendimiento
+-Para 1 modelo: Inercia: que tan cerca estan puntos de centroide
+-Puntaje de silueta: debe ser cercano a 1, que tan lejanos estan puntos
+
+##REDES NEURONALES
+Sirven para resolver problemas de Deep learning
+#Arquitectura de una red neuronal
+Capa de entrada: toma datos luedo de preprocesamienta y los alimennta a capa oculta
+Capa oculta: Pueden haber varias de este tipo. Representa las operaciones complejas que permiten modelas preguntas complejas. 
+Hacen operaciones a datos de entrada/capas ocultas
+Capa de salida: Valor de respuesta que deseamos obtener
+
+Capas son compuestas de nodos o "neuronas"
+Conexion: Relacion entre nodos
+Son usadas usualmente para modelos supervisados
+pesos altos=conexion fuerte. Pesos asociados determinan relacion
+varias conexiones a un solo nodo de capa oculta
+Wnodo capa entrada, nodo capa oculta
+
+nodos capa oculta: con combinacion lineal de valores de capa de entrada o capa oculta anterior, se pasa a una funcion de activacion
+Funcion de activacion, pasa una señal. Pueden ser simples ReLU 0, x<0 x,x>0
+Usar no linealidad para funciones complejas
+
+Capa de salida: prediccion que deseamos
+
+Para clasificacion deseamos algo que tenga que ver con probabilidad (0,1) en su rango. Softmax, Sigmoide
+Para regresion: ReLU, lineal
+
+Deep learning: parametros ancho y profundidad
+Profundidad: agregar mas capas, Ancho: agregar mas unidades ocultas
+
+#Entrenamiento de redes neuronales
+Tipos de arquitectura
+Deep Feed Forward: funciones de activacion. Usada en muchos problemas complejos
+Convolucional: usa operador convolucional/pool y kernels. Usada para imagenes y genomicos
+Recurrente: Celdas de memoria. Representa secuencias. Usada en lenguaje
+
+Preparacion de datos e inicalizar pesos de red --->
+1) Proceso de decision: como se hacen predicciones o se retornan respuestas usando los parametros. De capa de entrada a capa de salida
+2)Funcion de error/coste: como evalua si se generan buenas predicciones. Que tan bien se predijo valor
+3)Regla de actualizacion: como se mejoran los parametros para predicciones (optimizacion numerica). Ajuste de pesos 
+"Backpropagation": empieza desde capa de salida a capa de entrada evaluando los pesos en reversa, se actualiza cada peso en la red utilizando
+la derivada parcial respecto a cada nodo
+
+Las redes neuronales se pueden mejorar de 2 maneras
+Calculo  de perdida
+En regresion MSE, En clasificacion CCE (Categorical cross entropy )
+Calculo de desempeño. Si se aprenden procedimientos lo suficientemente generales a lo que se quiere
+
+Al final se revisa desempeño en datos de prueba
+
+Tasa de aprendizaje
+Optimizacion numerica para encontrar pesos de acuerdo a reglas de actualizacion
+
+#Como mejorar predicciones en redes neuronales
+Underfit (pocos parametros), Optimal, Overfit (muchos parametros)
+Dropout aleatoriamente ignora algunos nodos mientras entrena
+# epocas: 1 forward and backward pass trough nodes
+Rendimiento vs # Epocas
+
+
